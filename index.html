@@ -12,13 +12,18 @@
         }
 
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --text: #1f2937;
-            --text-light: #6b7280;
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --accent: #ec4899;
+            --text: #0f172a;
+            --text-light: #64748b;
             --bg: #ffffff;
-            --bg-secondary: #f9fafb;
-            --border: #e5e7eb;
+            --bg-secondary: #f8fafc;
+            --border: #e0e7ff;
+            --shadow: rgba(99, 102, 241, 0.15);
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
         body {
@@ -30,11 +35,13 @@
 
         /* Navigation */
         nav {
-            background: var(--bg);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+            box-shadow: 0 4px 20px var(--shadow);
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
         }
 
         .nav-container {
@@ -49,7 +56,10 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-links {
@@ -85,8 +95,12 @@
 
         .hero .subtitle {
             font-size: 1.5rem;
-            color: var(--primary);
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         .hero p {
@@ -104,8 +118,9 @@
             object-position: center 20%;
             margin: 0 auto 1.5rem;
             display: block;
-            border: 4px solid var(--primary);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: 4px solid transparent;
+            background: var(--gradient-1) padding-box, var(--gradient-1) border-box;
+            box-shadow: 0 12px 40px var(--shadow), 0 0 0 8px rgba(99, 102, 241, 0.1);
         }
 
         .cta-buttons {
@@ -135,7 +150,7 @@
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 8px 20px var(--shadow);
         }
 
         .btn-secondary {
@@ -148,7 +163,7 @@
             background: var(--primary);
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 8px 20px var(--shadow);
         }
 
         .resume-btn svg {
@@ -166,7 +181,26 @@
             font-size: 2rem;
             margin-bottom: 2rem;
             text-align: center;
-            color: var(--text);
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 2px;
         }
 
         /* Skills */
@@ -179,13 +213,24 @@
         .skill-card {
             background: var(--bg);
             padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px var(--shadow);
         }
 
         .skill-card h3 {
-            color: var(--primary);
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .skill-card ul {
@@ -208,14 +253,38 @@
         .experience-item {
             background: var(--bg);
             padding: 2rem;
-            border-radius: 0.5rem;
+            border-radius: 0.75rem;
             margin-bottom: 2rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px var(--shadow);
+            border-left: 4px solid transparent;
+            border-image: var(--gradient-1) 1;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-1);
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 16px var(--shadow);
         }
 
         .experience-item h3 {
-            color: var(--primary);
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .experience-item .company {
@@ -259,19 +328,25 @@
         .project-card {
             background: var(--bg);
             padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            border: 1px solid var(--border);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px var(--shadow);
+            border-color: var(--primary);
         }
 
         .project-card h3 {
-            color: var(--primary);
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .project-card p {
@@ -286,12 +361,13 @@
         }
 
         .tech-tag {
-            background: var(--bg-secondary);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
             padding: 0.25rem 0.75rem;
             border-radius: 1rem;
             font-size: 0.875rem;
             color: var(--primary);
             border: 1px solid var(--border);
+            font-weight: 500;
         }
 
         .project-link {
@@ -373,7 +449,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">SM</div>
+            <div class="logo">Swapnil Muley</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
