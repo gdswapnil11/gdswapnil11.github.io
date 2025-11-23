@@ -74,54 +74,53 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+            text-align: center;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
             color: var(--text);
         }
 
-        .hero-content .subtitle {
+        .hero .subtitle {
             font-size: 1.5rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
 
-        .hero-content p {
+        .hero p {
+            font-size: 1.125rem;
             color: var(--text-light);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
         }
 
-        .hero-image {
-            text-align: center;
-        }
-
-        .hero-image img {
-            width: 350px;
-            height: 350px;
+        .profile-photo {
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
-            object-position: center top;
-            border: 5px solid var(--primary);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            object-position: center 20%;
+            margin: 0 auto 1.5rem;
+            display: block;
+            border: 4px solid var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .cta-buttons {
             display: flex;
             gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
         .btn {
             padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
+            border-radius: 0.5rem;
             text-decoration: none;
+            font-weight: 600;
             transition: all 0.3s;
             display: inline-flex;
             align-items: center;
@@ -136,6 +135,7 @@
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
         .btn-secondary {
@@ -147,99 +147,86 @@
         .btn-secondary:hover {
             background: var(--primary);
             color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .resume-btn svg {
+            fill: currentColor;
         }
 
         /* Section */
         section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
         }
 
-        .section-title {
-            font-size: 2.5rem;
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
             text-align: center;
-            margin-bottom: 3rem;
             color: var(--text);
         }
 
         /* Skills */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
         .skill-card {
             background: var(--bg);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .skill-card h3 {
             color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
         }
 
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+        .skill-card ul {
+            list-style: none;
+            padding-left: 0;
         }
 
-        .tag {
-            background: var(--bg-secondary);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            color: var(--text);
-            border: 1px solid var(--border);
+        .skill-card li {
+            padding: 0.25rem 0;
+            color: var(--text-light);
+        }
+
+        .skill-card li:before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: bold;
         }
 
         /* Experience */
         .experience-item {
             background: var(--bg);
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 0.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--primary);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .experience-title h3 {
-            font-size: 1.5rem;
-            color: var(--text);
+        .experience-item h3 {
+            color: var(--primary);
             margin-bottom: 0.5rem;
         }
 
-        .company {
-            color: var(--primary);
+        .experience-item .company {
             font-weight: 600;
+            color: var(--text);
         }
 
-        .duration {
-            background: var(--bg-secondary);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
+        .experience-item .duration {
             color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
         }
 
         .experience-item ul {
@@ -249,94 +236,103 @@
 
         .experience-item li {
             padding: 0.5rem 0;
+            color: var(--text-light);
             padding-left: 1.5rem;
             position: relative;
         }
 
         .experience-item li:before {
-            content: "▸";
+            content: "→";
             position: absolute;
             left: 0;
             color: var(--primary);
+            font-weight: bold;
         }
 
         /* Projects */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
         .project-card {
             background: var(--bg);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
-        .project-content {
-            padding: 1.5rem;
+        .project-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
 
-        .project-content h3 {
-            color: var(--text);
-            margin-bottom: 0.75rem;
-            font-size: 1.3rem;
-        }
-
-        .project-content p {
+        .project-card p {
             color: var(--text-light);
             margin-bottom: 1rem;
-            min-height: 60px;
         }
 
-        .project-tech {
+        .tech-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            color: var(--primary);
+            border: 1px solid var(--border);
+        }
+
+        .project-link {
+            display: inline-block;
             margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--primary-dark);
         }
 
         /* Contact */
         .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
             gap: 2rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
-        .contact-card {
-            background: var(--bg);
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .contact-card svg {
-            width: 48px;
-            height: 48px;
-            fill: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .contact-card h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-card a {
+        .contact-links a {
             color: var(--primary);
             text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .contact-card a:hover {
-            text-decoration: underline;
+        .contact-links a:hover {
+            color: var(--primary-dark);
         }
 
         /* Footer */
@@ -348,78 +344,28 @@
             margin-top: 4rem;
         }
 
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text);
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 2rem;
             }
 
-            .hero-image img {
-                width: 250px;
-                height: 250px;
+            .hero .subtitle {
+                font-size: 1.25rem;
             }
 
             .cta-buttons {
-                justify-content: center;
+                flex-direction: column;
+                align-items: center;
             }
 
             .nav-links {
-                display: none;
+                gap: 1rem;
             }
 
-            .mobile-menu-btn {
-                display: block;
+            section {
+                padding: 2rem 1rem;
             }
-
-            .experience-header {
-                flex-direction: column;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .stat-card {
-            background: var(--primary);
-            color: white;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            opacity: 0.9;
         }
     </style>
 </head>
@@ -429,361 +375,266 @@
         <div class="nav-container">
             <div class="logo">SM</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Swapnil Muley</h1>
-            <div class="subtitle">Senior Angular & React Specialist | Frontend Architect</div>
-            <p>9+ years of expertise in architecting scalable frontend solutions with Angular (2-19) & React. Core skills: Micro Frontends, Performance Optimization, CI/CD Pipelines, and leading high-performing development teams.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#projects" class="btn btn-secondary">View Projects</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/90bb2c49-2aa9-4b50-9626-cad504a79850" alt="Swapnil Muley">
-        </div>
-    </section>
-
-    <!-- Stats -->
-    <section>
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number">9+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Projects Delivered</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">5+</div>
-                <div class="stat-label">NPM Packages</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">Technologies</div>
-            </div>
+    <section class="hero">
+        <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/2f1cd3de-412c-42c6-9bf3-de5d952d17f1" alt="Swapnil Muley" class="profile-photo">
+        <h1>Swapnil Muley</h1>
+        <div class="subtitle">UI/Frontend Specialist & Architect</div>
+        <p>Passionate and results-driven Software Engineer with 9+ years of expertise in architecting highly scalable, performant frontend solutions. Specialized in building enterprise-grade applications with Angular (2–19) and React, crafting elegant Micro Frontend architectures, and driving performance excellence through innovative optimization strategies. Proven leader in mentoring high-performing engineering teams, implementing robust CI/CD pipelines, and delivering mission-critical solutions that transform user experiences and business outcomes.</p>
+        
+        <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary">Get In Touch</a>
+            <a href="#projects" class="btn btn-secondary">View Projects</a>
+            <a href="Resume-19-November.pdf" download="Swapnil-Muley-Resume.pdf" class="btn btn-secondary resume-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                </svg>
+                Download Resume
+            </a>
         </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills Section -->
     <section id="skills">
-        <h2 class="section-title">Technical Skills</h2>
+        <h2>Core Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <h3>Frontend Technologies</h3>
-                <div class="skill-tags">
-                    <span class="tag">Angular 2-19</span>
-                    <span class="tag">React</span>
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">HTML5</span>
-                    <span class="tag">CSS3</span>
-                    <span class="tag">SASS</span>
-                    <span class="tag">LESS</span>
-                    <span class="tag">RxJS</span>
-                    <span class="tag">Bootstrap</span>
-                    <span class="tag">Tailwind CSS</span>
-                    <span class="tag">Material UI</span>
-                </div>
+                <ul>
+                    <li>Angular (2-19), React</li>
+                    <li>JavaScript, TypeScript</li>
+                    <li>HTML5, CSS3, SASS</li>
+                    <li>RxJS, Bootstrap, Tailwind CSS</li>
+                    <li>Material UI, WCAG 2.2</li>
+                </ul>
             </div>
             <div class="skill-card">
                 <h3>State Management</h3>
-                <div class="skill-tags">
-                    <span class="tag">Redux</span>
-                    <span class="tag">NgRx</span>
-                    <span class="tag">NGXS</span>
-                    <span class="tag">Zustand</span>
-                    <span class="tag">Context API</span>
-                    <span class="tag">MobX</span>
-                    <span class="tag">Akita</span>
-                </div>
+                <ul>
+                    <li>Redux, NgRx, ngxs</li>
+                    <li>Zustand, Context API</li>
+                    <li>BehaviorSubject</li>
+                </ul>
             </div>
             <div class="skill-card">
-                <h3>Testing & Quality</h3>
-                <div class="skill-tags">
-                    <span class="tag">Jasmine</span>
-                    <span class="tag">Karma</span>
-                    <span class="tag">Jest</span>
-                    <span class="tag">Cypress</span>
-                    <span class="tag">Protractor</span>
-                    <span class="tag">Selenium</span>
-                    <span class="tag">SonarQube</span>
-                    <span class="tag">ESLint</span>
-                </div>
+                <h3>Testing & Optimization</h3>
+                <ul>
+                    <li>Jasmine, Karma, Jest, Cypress</li>
+                    <li>Webpack, Lighthouse</li>
+                    <li>Lazy Loading, Code Splitting</li>
+                    <li>OnPush Change Detection</li>
+                </ul>
             </div>
             <div class="skill-card">
-                <h3>Architecture & Design</h3>
-                <div class="skill-tags">
-                    <span class="tag">Micro Frontends</span>
-                    <span class="tag">Module Federation</span>
-                    <span class="tag">Monorepo (Nx)</span>
-                    <span class="tag">Component-driven</span>
-                    <span class="tag">Design Patterns</span>
-                    <span class="tag">SOLID Principles</span>
-                    <span class="tag">Lerna</span>
-                </div>
+                <h3>Architecture & DevOps</h3>
+                <ul>
+                    <li>Micro Frontends, Module Federation</li>
+                    <li>Monorepo (Nx, Lerna)</li>
+                    <li>Jenkins, GitHub Actions, Docker</li>
+                    <li>Git, SonarQube</li>
+                </ul>
             </div>
             <div class="skill-card">
-                <h3>DevOps & CI/CD</h3>
-                <div class="skill-tags">
-                    <span class="tag">Jenkins</span>
-                    <span class="tag">GitHub Actions</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">Git</span>
-                    <span class="tag">GitLab CI</span>
-                    <span class="tag">Azure DevOps</span>
-                    <span class="tag">Kubernetes</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>Performance & Optimization</h3>
-                <div class="skill-tags">
-                    <span class="tag">Webpack</span>
-                    <span class="tag">Lighthouse</span>
-                    <span class="tag">Lazy Loading</span>
-                    <span class="tag">Code Splitting</span>
-                    <span class="tag">OnPush Strategy</span>
-                    <span class="tag">Bundle Optimization</span>
-                    <span class="tag">PWA</span>
-                    <span class="tag">Service Workers</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>Data Visualization</h3>
-                <div class="skill-tags">
-                    <span class="tag">D3.js</span>
-                    <span class="tag">Chart.js</span>
-                    <span class="tag">Highcharts</span>
-                    <span class="tag">ECharts</span>
-                    <span class="tag">AG Grid</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>Backend & APIs</h3>
-                <div class="skill-tags">
-                    <span class="tag">Node.js</span>
-                    <span class="tag">Express.js</span>
-                    <span class="tag">REST API</span>
-                    <span class="tag">GraphQL</span>
-                    <span class="tag">MongoDB</span>
-                    <span class="tag">Firebase</span>
-                    <span class="tag">WebSockets</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>Accessibility & Standards</h3>
-                <div class="skill-tags">
-                    <span class="tag">WCAG 2.2</span>
-                    <span class="tag">ARIA</span>
-                    <span class="tag">Screen Readers</span>
-                    <span class="tag">Semantic HTML</span>
-                    <span class="tag">Keyboard Navigation</span>
-                </div>
+                <h3>Collaboration Tools</h3>
+                <ul>
+                    <li>Jira, Confluence</li>
+                    <li>Slack, Trello</li>
+                    <li>GitHub Copilot, Cursor</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Experience -->
+    <!-- Experience Section -->
     <section id="experience">
-        <h2 class="section-title">Professional Experience</h2>
+        <h2>Professional Experience</h2>
         
         <div class="experience-item">
-            <div class="experience-header">
-                <div class="experience-title">
-                    <h3>Delivery Project Lead</h3>
-                    <div class="company">Mphasis | Client: JPMC</div>
-                </div>
-                <div class="duration">August 2025 – Present</div>
-            </div>
+            <h3>Delivery Project Lead</h3>
+            <div class="company">Mphasis | Pune</div>
+            <div class="duration">August 2025 - Present</div>
             <ul>
-                <li>Leading cross-functional teams (developers, QA, UX, DevOps) for JPMC projects</li>
-                <li>Implementing CI/CD pipelines with Jenkins for automated deployments</li>
-                <li>Managing project scope, timelines, and stakeholder communication</li>
-                <li>Tracking KPIs and ensuring adherence to coding standards</li>
+                <li>Defined project scope, timelines, and deliverables for JPMC, aligning with technology and business goals</li>
+                <li>Led cross-functional teams (developers, QA, UX, DevOps) ensuring seamless collaboration and delivery</li>
+                <li>Acted as primary client liaison with transparent communication and stakeholder management</li>
+                <li>Implemented CI/CD pipelines with Jenkins to automate builds, testing, and deployment</li>
+                <li>Tracked KPIs, managed budgets, and delivered progress reports to leadership</li>
             </ul>
         </div>
 
         <div class="experience-item">
-            <div class="experience-header">
-                <div class="experience-title">
-                    <h3>Staff Engineer</h3>
-                    <div class="company">Altimetrik | Client: Citi Bank</div>
-                </div>
-                <div class="duration">September 2024 – August 2025</div>
-            </div>
+            <h3>Staff Engineer</h3>
+            <div class="company">Altimetrik Pvt. Ltd. | Pune</div>
+            <div class="duration">September 2024 - August 2025</div>
             <ul>
-                <li>Architected frontend for financial applications using Angular 17</li>
-                <li>Implemented scalable UI components with security best practices</li>
-                <li>Optimized performance using OnPush change detection and lazy loading</li>
-                <li>Conducted code reviews and mentoring sessions across teams</li>
+                <li>Architected and led frontend development for Citi Bank financial applications using Angular 17</li>
+                <li>Implemented scalable and reusable UI components, enforcing security and performance best practices</li>
+                <li>Integrated RESTful APIs and optimized async workflows using RxJS operators</li>
+                <li>Improved app efficiency via OnPush change detection, lazy loading, and code splitting</li>
+                <li>Conducted code reviews, mentoring sessions, and knowledge sharing across teams</li>
             </ul>
         </div>
 
         <div class="experience-item">
-            <div class="experience-header">
-                <div class="experience-title">
-                    <h3>Tech Lead</h3>
-                    <div class="company">Torana Inc.</div>
-                </div>
-                <div class="duration">July 2018 – August 2024</div>
-            </div>
+            <h3>Tech Lead</h3>
+            <div class="company">Torana Inc. | Nagpur</div>
+            <div class="duration">July 2018 - August 2024</div>
             <ul>
-                <li>Led development of iceDQ (NextGen), Electrik.Ai, Knowledge Graph, CircleYard projects</li>
-                <li>Implemented Micro Frontend architecture (MFE) and Monorepo (Nx, Lerna)</li>
-                <li>Drove WCAG 2.2 web accessibility compliance adoption</li>
-                <li>Built data visualization dashboards using Angular + D3.js</li>
-                <li>Established CI/CD workflows with GitHub Actions, Jenkins, Docker</li>
+                <li>Led frontend teams building enterprise-grade applications in Angular (9-17) and React</li>
+                <li>Implemented Micro Frontend architecture (MFE), Monorepo (Nx, Lerna), and CI/CD pipelines</li>
+                <li>Drove web accessibility adoption (WCAG 2.2, ARIA roles, semantic HTML) for compliance</li>
+                <li>Enhanced performance optimization through code splitting, virtualized lists, and lazy loading</li>
+                <li>Designed data visualization dashboards (Angular + D3.js) for Knowledge Graph project</li>
             </ul>
         </div>
 
         <div class="experience-item">
-            <div class="experience-header">
-                <div class="experience-title">
-                    <h3>Frontend Developer</h3>
-                    <div class="company">Royal Developer</div>
-                </div>
-                <div class="duration">September 2016 – June 2018</div>
-            </div>
+            <h3>Frontend Developer</h3>
+            <div class="company">Royal Developer | Nagpur</div>
+            <div class="duration">September 2016 - June 2018</div>
             <ul>
-                <li>Built mobile and web applications using Ionic 2, Angular, TypeScript</li>
-                <li>Developed authentication, order tracking, and payment integration features</li>
+                <li>Built mobile and web applications using Ionic 2, Angular, TypeScript, HTML5, and CSS3</li>
+                <li>Developed secure authentication, order tracking, and payment integration features</li>
                 <li>Optimized mobile performance and deployed apps to app stores</li>
             </ul>
         </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects Section -->
     <section id="projects">
-        <h2 class="section-title">Key Projects</h2>
+        <h2>Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-content">
-                    <h3>iceDQ (NextGen)</h3>
-                    <p>Enterprise data quality platform with micro frontend architecture, real-time validation dashboards, and complex data visualization using D3.js.</p>
-                    <div class="project-tech">
-                        <span class="tag">Angular 9-17</span>
-                        <span class="tag">Micro Frontend</span>
-                        <span class="tag">D3.js</span>
-                    </div>
+                <h3>iceDQ (NextGen) - Data Quality Platform</h3>
+                <p>Led frontend development for enterprise data quality application using Angular 9-17. Implemented micro frontend architecture, real-time data validation dashboards, and complex data visualization using D3.js.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Angular 9-17</span>
+                    <span class="tech-tag">Micro Frontends</span>
+                    <span class="tech-tag">D3.js</span>
+                    <span class="tech-tag">RxJS</span>
                 </div>
             </div>
 
             <div class="project-card">
-                <div class="project-content">
-                    <h3>Electrik.Ai</h3>
-                    <p>AI-powered analytics platform with scalable UI, state management (Redux/NgRx), and WCAG 2.2 accessibility compliance.</p>
-                    <div class="project-tech">
-                        <span class="tag">React</span>
-                        <span class="tag">Angular</span>
-                        <span class="tag">Redux</span>
-                        <span class="tag">NgRx</span>
-                    </div>
+                <h3>Electrik.Ai - AI-Powered Analytics</h3>
+                <p>Architected scalable UI for AI-driven analytics platform with React and Angular. Implemented state management with Redux/NgRx, optimized rendering performance for large datasets, and ensured WCAG 2.2 accessibility compliance.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">Redux/NgRx</span>
+                    <span class="tech-tag">WCAG 2.2</span>
                 </div>
             </div>
 
             <div class="project-card">
-                <div class="project-content">
-                    <h3>Knowledge Graph</h3>
-                    <p>Interactive graph visualization tool with hierarchical layouts, dynamic node connections, zoom/pan capabilities, and real-time updates.</p>
-                    <div class="project-tech">
-                        <span class="tag">Angular</span>
-                        <span class="tag">D3.js</span>
-                        <span class="tag">TypeScript</span>
-                    </div>
+                <h3>Knowledge Graph - Data Visualization Dashboard</h3>
+                <p>Designed interactive graph visualization tool using Angular and D3.js, featuring hierarchical layouts, dynamic node connections, zoom/pan capabilities, and real-time data updates.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">D3.js</span>
+                    <span class="tech-tag">Real-time</span>
                 </div>
             </div>
 
             <div class="project-card">
-                <div class="project-content">
-                    <h3>CircleYard</h3>
-                    <p>Community management platform with real-time notifications, user management, and event scheduling capabilities.</p>
-                    <div class="project-tech">
-                        <span class="tag">Angular</span>
-                        <span class="tag">RxJS</span>
-                        <span class="tag">Material UI</span>
-                    </div>
+                <h3>CircleYard - Community Management Platform</h3>
+                <p>Built responsive web application for community management with Angular, featuring real-time notifications, user management, and event scheduling capabilities.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">Real-time DB</span>
                 </div>
             </div>
 
             <div class="project-card">
-                <div class="project-content">
-                    <h3>Family Tree Visualization</h3>
-                    <p>Interactive family tree diagram using D3.js and dTree.js with Angular for visualizing complex family relationships.</p>
-                    <div class="project-tech">
-                        <span class="tag">D3.js</span>
-                        <span class="tag">Angular</span>
-                        <span class="tag">dTree.js</span>
-                    </div>
+                <h3>Family Tree Visualization Tool</h3>
+                <p>Created interactive family tree diagram using D3.js and dTree.js with Angular integration for visualizing complex family relationships with fixed hierarchical layouts.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">D3.js</span>
+                    <span class="tech-tag">dTree.js</span>
                 </div>
+                <a href="https://gdswapnil11.github.io/family-tree.github.io/" target="_blank" class="project-link">View Live Demo →</a>
             </div>
 
             <div class="project-card">
-                <div class="project-content">
-                    <h3>Angular Dynamic Forms Library</h3>
-                    <p>Published NPM package for JSON-driven dynamic forms with Material Design support. Features include reactive forms, validation, conditional fields, and TypeScript support.</p>
-                    <div class="project-tech">
-                        <span class="tag">Angular</span>
-                        <span class="tag">NPM</span>
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">Material</span>
-                    </div>
-                    <a href="https://www.npmjs.com/package/lib-dynamic-forms?activeTab=readme" target="_blank" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">View on NPM</a>
+                <h3>lib-dynamic-forms - NPM Package</h3>
+                <p>Published NPM package for JSON-driven dynamic forms with Material Design support. Features include reactive forms, validation, conditional fields, and TypeScript support.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">NPM</span>
+                    <span class="tech-tag">Material UI</span>
+                    <span class="tech-tag">TypeScript</span>
+                </div>
+                <a href="https://www.npmjs.com/package/lib-dynamic-forms?activeTab=readme" target="_blank" class="project-link">View on NPM →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Zoneless Angular + Signals Demo</h3>
+                <p>Built Angular 18+ application demonstrating zoneless change detection and signals-based reactivity using JSONPlaceholder API. Features signal(), computed(), and provideZonelessChangeDetection() - no Zone.js, no RxJS boilerplate. Showcases faster rendering, predictable reactivity, and fine-grained change detection.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Angular 18+</span>
+                    <span class="tech-tag">Signals API</span>
+                    <span class="tech-tag">Zoneless</span>
+                    <span class="tech-tag">HttpClient</span>
+                </div>
+                <a href="https://github.com/gdswapnil11/zoneless-angular-demo" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Reusable NPM Packages & Open-Source</h3>
+                <p>Developed and published multiple NPM packages including invoice generator, JSON formatter utility, graph/node layout library, and Angular security toolkit for vulnerability scanning and SSL/TLS validation.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">NPM</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Security</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2>Get In Touch</h2>
         <div class="contact-info">
-            <div class="contact-card">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                <h3>Email</h3>
-                <a href="mailto:gdswapnil11@gmail.com">gdswapnil11@gmail.com</a>
-            </div>
-
-            <div class="contact-card">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                <h3>Phone</h3>
-                <a href="tel:+917020127798">+91 70201 27798</a>
-            </div>
-
-            <div class="contact-card">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
-                <h3>LinkedIn</h3>
-                <a href="https://linkedin.com/in/swapnil-muley-166251a8" target="_blank">Connect on LinkedIn</a>
-            </div>
-
-            <div class="contact-card">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                <h3>GitHub</h3>
-                <a href="https://github.com/swapnilmuley" target="_blank">View GitHub Profile</a>
-            </div>
-
-            <div class="contact-card">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
-                <h3>Medium</h3>
-                <a href="https://medium.com/@gdswapnil11" target="_blank">Read My Articles</a>
-            </div>
-
-            <div class="contact-card">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                <h3>Location</h3>
-                <p>Nagpur, Maharashtra, India</p>
+            <p>Location: Nagpur, Maharashtra, India | Phone: (+91) 70201 27798 | (+91) 77099 11007</p>
+            <p>I'm always interested in hearing about new opportunities and collaborations.</p>
+            <div class="contact-links">
+                <a href="mailto:gdswapnil11@gmail.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                    </svg>
+                    Email
+                </a>
+                <a href="https://linkedin.com/in/swapnil-muley-166251a8" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+                <a href="https://medium.com/@gdswapnil11" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8zm4.95 0c0 2.34-1.01 4.236-2.256 4.236-1.246 0-2.256-1.897-2.256-4.236 0-2.34 1.01-4.236 2.256-4.236 1.246 0 2.256 1.897 2.256 4.236zM16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795z"/>
+                    </svg>
+                    Medium
+                </a>
+                <a href="https://github.com/swapnilmuley" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    GitHub
+                </a>
             </div>
         </div>
     </section>
@@ -791,57 +642,7 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Swapnil Muley. All rights reserved.</p>
-        <p>Senior Angular & React Specialist | Frontend Architect | 9+ Years Experience | Micro Frontends & CI/CD Expert</p>
     </footer>
-
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.background = 'white';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.padding = '1rem';
-                navLinks.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Add active class to nav links on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollY = window.pageYOffset;
-
-            sections.forEach(section => {
-                const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - 100;
-                const sectionId = section.getAttribute('id');
-                const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
-
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    navLink?.style.setProperty('color', 'var(--primary)');
-                } else {
-                    navLink?.style.removeProperty('color');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
+
