@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swapnil Muley - Senior Frontend Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --bg-secondary: #f9fafb;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--bg-secondary);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 5px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Section */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .skill-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--bg-secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        /* Experience */
+        .experience-item {
+            background: var(--bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-title h3 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .company {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .duration {
+            background: var(--bg-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-item li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-item li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            min-height: 60px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: var(--bg);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .contact-card svg {
+            width: 48px;
+            height: 48px;
+            fill: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-image img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SM</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Swapnil Muley</h1>
+            <div class="subtitle">Senior Angular & React Specialist | Frontend Architect</div>
+            <p>9+ years of expertise in architecting scalable frontend solutions with Angular (2-19) & React. Core skills: Micro Frontends, Performance Optimization, CI/CD Pipelines, and leading high-performing development teams.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/90bb2c49-2aa9-4b50-9626-cad504a79850" alt="Swapnil Muley">
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">9+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Projects Delivered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">NPM Packages</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Technologies</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Frontend Technologies</h3>
+                <div class="skill-tags">
+                    <span class="tag">Angular 2-19</span>
+                    <span class="tag">React</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">SASS</span>
+                    <span class="tag">LESS</span>
+                    <span class="tag">RxJS</span>
+                    <span class="tag">Bootstrap</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">Material UI</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>State Management</h3>
+                <div class="skill-tags">
+                    <span class="tag">Redux</span>
+                    <span class="tag">NgRx</span>
+                    <span class="tag">NGXS</span>
+                    <span class="tag">Zustand</span>
+                    <span class="tag">Context API</span>
+                    <span class="tag">MobX</span>
+                    <span class="tag">Akita</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Testing & Quality</h3>
+                <div class="skill-tags">
+                    <span class="tag">Jasmine</span>
+                    <span class="tag">Karma</span>
+                    <span class="tag">Jest</span>
+                    <span class="tag">Cypress</span>
+                    <span class="tag">Protractor</span>
+                    <span class="tag">Selenium</span>
+                    <span class="tag">SonarQube</span>
+                    <span class="tag">ESLint</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Architecture & Design</h3>
+                <div class="skill-tags">
+                    <span class="tag">Micro Frontends</span>
+                    <span class="tag">Module Federation</span>
+                    <span class="tag">Monorepo (Nx)</span>
+                    <span class="tag">Component-driven</span>
+                    <span class="tag">Design Patterns</span>
+                    <span class="tag">SOLID Principles</span>
+                    <span class="tag">Lerna</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>DevOps & CI/CD</h3>
+                <div class="skill-tags">
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">GitHub Actions</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">GitLab CI</span>
+                    <span class="tag">Azure DevOps</span>
+                    <span class="tag">Kubernetes</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Performance & Optimization</h3>
+                <div class="skill-tags">
+                    <span class="tag">Webpack</span>
+                    <span class="tag">Lighthouse</span>
+                    <span class="tag">Lazy Loading</span>
+                    <span class="tag">Code Splitting</span>
+                    <span class="tag">OnPush Strategy</span>
+                    <span class="tag">Bundle Optimization</span>
+                    <span class="tag">PWA</span>
+                    <span class="tag">Service Workers</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Data Visualization</h3>
+                <div class="skill-tags">
+                    <span class="tag">D3.js</span>
+                    <span class="tag">Chart.js</span>
+                    <span class="tag">Highcharts</span>
+                    <span class="tag">ECharts</span>
+                    <span class="tag">AG Grid</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Backend & APIs</h3>
+                <div class="skill-tags">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Express.js</span>
+                    <span class="tag">REST API</span>
+                    <span class="tag">GraphQL</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">WebSockets</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Accessibility & Standards</h3>
+                <div class="skill-tags">
+                    <span class="tag">WCAG 2.2</span>
+                    <span class="tag">ARIA</span>
+                    <span class="tag">Screen Readers</span>
+                    <span class="tag">Semantic HTML</span>
+                    <span class="tag">Keyboard Navigation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">
+                    <h3>Delivery Project Lead</h3>
+                    <div class="company">Mphasis | Client: JPMC</div>
+                </div>
+                <div class="duration">August 2025 – Present</div>
+            </div>
+            <ul>
+                <li>Leading cross-functional teams (developers, QA, UX, DevOps) for JPMC projects</li>
+                <li>Implementing CI/CD pipelines with Jenkins for automated deployments</li>
+                <li>Managing project scope, timelines, and stakeholder communication</li>
+                <li>Tracking KPIs and ensuring adherence to coding standards</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">
+                    <h3>Staff Engineer</h3>
+                    <div class="company">Altimetrik | Client: Citi Bank</div>
+                </div>
+                <div class="duration">September 2024 – August 2025</div>
+            </div>
+            <ul>
+                <li>Architected frontend for financial applications using Angular 17</li>
+                <li>Implemented scalable UI components with security best practices</li>
+                <li>Optimized performance using OnPush change detection and lazy loading</li>
+                <li>Conducted code reviews and mentoring sessions across teams</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">
+                    <h3>Tech Lead</h3>
+                    <div class="company">Torana Inc.</div>
+                </div>
+                <div class="duration">July 2018 – August 2024</div>
+            </div>
+            <ul>
+                <li>Led development of iceDQ (NextGen), Electrik.Ai, Knowledge Graph, CircleYard projects</li>
+                <li>Implemented Micro Frontend architecture (MFE) and Monorepo (Nx, Lerna)</li>
+                <li>Drove WCAG 2.2 web accessibility compliance adoption</li>
+                <li>Built data visualization dashboards using Angular + D3.js</li>
+                <li>Established CI/CD workflows with GitHub Actions, Jenkins, Docker</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div class="experience-title">
+                    <h3>Frontend Developer</h3>
+                    <div class="company">Royal Developer</div>
+                </div>
+                <div class="duration">September 2016 – June 2018</div>
+            </div>
+            <ul>
+                <li>Built mobile and web applications using Ionic 2, Angular, TypeScript</li>
+                <li>Developed authentication, order tracking, and payment integration features</li>
+                <li>Optimized mobile performance and deployed apps to app stores</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">Key Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>iceDQ (NextGen)</h3>
+                    <p>Enterprise data quality platform with micro frontend architecture, real-time validation dashboards, and complex data visualization using D3.js.</p>
+                    <div class="project-tech">
+                        <span class="tag">Angular 9-17</span>
+                        <span class="tag">Micro Frontend</span>
+                        <span class="tag">D3.js</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Electrik.Ai</h3>
+                    <p>AI-powered analytics platform with scalable UI, state management (Redux/NgRx), and WCAG 2.2 accessibility compliance.</p>
+                    <div class="project-tech">
+                        <span class="tag">React</span>
+                        <span class="tag">Angular</span>
+                        <span class="tag">Redux</span>
+                        <span class="tag">NgRx</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Knowledge Graph</h3>
+                    <p>Interactive graph visualization tool with hierarchical layouts, dynamic node connections, zoom/pan capabilities, and real-time updates.</p>
+                    <div class="project-tech">
+                        <span class="tag">Angular</span>
+                        <span class="tag">D3.js</span>
+                        <span class="tag">TypeScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>CircleYard</h3>
+                    <p>Community management platform with real-time notifications, user management, and event scheduling capabilities.</p>
+                    <div class="project-tech">
+                        <span class="tag">Angular</span>
+                        <span class="tag">RxJS</span>
+                        <span class="tag">Material UI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Family Tree Visualization</h3>
+                    <p>Interactive family tree diagram using D3.js and dTree.js with Angular for visualizing complex family relationships.</p>
+                    <div class="project-tech">
+                        <span class="tag">D3.js</span>
+                        <span class="tag">Angular</span>
+                        <span class="tag">dTree.js</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Angular Dynamic Forms Library</h3>
+                    <p>Published NPM package for JSON-driven dynamic forms with Material Design support. Features include reactive forms, validation, conditional fields, and TypeScript support.</p>
+                    <div class="project-tech">
+                        <span class="tag">Angular</span>
+                        <span class="tag">NPM</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Material</span>
+                    </div>
+                    <a href="https://www.npmjs.com/package/lib-dynamic-forms?activeTab=readme" target="_blank" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.9rem; padding: 0.5rem 1rem;">View on NPM</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-info">
+            <div class="contact-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <h3>Email</h3>
+                <a href="mailto:gdswapnil11@gmail.com">gdswapnil11@gmail.com</a>
+            </div>
+
+            <div class="contact-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <h3>Phone</h3>
+                <a href="tel:+917020127798">+91 70201 27798</a>
+            </div>
+
+            <div class="contact-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/swapnil-muley-166251a8" target="_blank">Connect on LinkedIn</a>
+            </div>
+
+            <div class="contact-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                <h3>GitHub</h3>
+                <a href="https://github.com/swapnilmuley" target="_blank">View GitHub Profile</a>
+            </div>
+
+            <div class="contact-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                <h3>Medium</h3>
+                <a href="https://medium.com/@gdswapnil11" target="_blank">Read My Articles</a>
+            </div>
+
+            <div class="contact-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <h3>Location</h3>
+                <p>Nagpur, Maharashtra, India</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Swapnil Muley. All rights reserved.</p>
+        <p>Senior Angular & React Specialist | Frontend Architect | 9+ Years Experience | Micro Frontends & CI/CD Expert</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'white';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.padding = '1rem';
+                navLinks.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Add active class to nav links on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLink?.style.setProperty('color', 'var(--primary)');
+                } else {
+                    navLink?.style.removeProperty('color');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
